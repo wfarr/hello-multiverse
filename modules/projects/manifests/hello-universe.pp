@@ -9,12 +9,15 @@ class projects::hello-universe {
     owner => 'hello-universe',
   }
 
-  exec { 'apt-get update':
+  exec { '/usr/bin/apt-get update':
   }
 
   ->
   package { 'build-essential':
   }
+
+  ->
+  package { 'curl': }
 
   ->
   user { 'hello-universe':
