@@ -1,5 +1,6 @@
 class projects::hello-universe {
   require git
+  include ruby
 
   File {
     owner => 'hello-universe',
@@ -27,6 +28,11 @@ class projects::hello-universe {
   ->
   ruby::local { '/app/.ruby-version':
     version => '1.9.3-p231-tcs-github',
+  }
+
+  ->
+  file { '/app/.profile':
+    content => "source ${ruby::chruby_root}/share/chruby/chruby.sh\n\nsource ${ruby::chruby_root}/share/chruby/auto.sh\n",
   }
 
 }
