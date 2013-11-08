@@ -1,10 +1,6 @@
 class projects::hello-universe {
   require git
 
-  Exec {
-    path => '/usr/bin:/bin',
-  }
-
   File {
     owner => 'hello-universe',
   }
