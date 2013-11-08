@@ -1,7 +1,11 @@
 class projects::hello-universe {
 
   Exec {
-    path => "/usr/bin:/bin"
+    path => '/usr/bin:/bin',
+  }
+
+  File {
+    owner => 'hello-universe',
   }
 
   exec { 'apt-get update':
@@ -27,6 +31,9 @@ class projects::hello-universe {
     user     => 'hello-universe',
     provider => git,
   }
+
+  ->
+  exec { 'chown -R hello-universe /app': }
 
   ->
   file { '/app/.ruby-version':
