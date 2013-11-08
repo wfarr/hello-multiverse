@@ -26,7 +26,7 @@ class projects::hello-universe {
   }
 
   ->
-  ruby::local { '/app/.ruby-version':
+  ruby::local { '/app':
     version => '1.9.3-p231-tcs-github',
   }
 
