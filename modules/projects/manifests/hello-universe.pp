@@ -1,7 +1,12 @@
 class projects::hello-universe {
 
+  exec { 'apt-get update':
+  }
+
+  ->
   package { ['git-core', 'build-essential']:
-    ensure => present,
+    ensure   => present,
+    provider => apt,
   }
 
   ->
