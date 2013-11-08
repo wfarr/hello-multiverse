@@ -1,23 +1,23 @@
-class projects::hello-multiverse {
+class projects::hello-universe {
 
   package { 'git-core':
     ensure => $ensure,
   }
 
   ->
-  group { 'hello-multiverse': }
+  group { 'hello-universe': }
 
   ->
-  user { 'hello-multiverse':
+  user { 'hello-universe':
     home  => '/app',
-    gid   => 'hello-multiverse',
+    gid   => 'hello-universe',
     shell => '/bin/bash',
   }
 
   ->
   repository { '/app':
-    source   => 'git://github.com/wfarr/hello-multiverse.git',
-    user     => 'hello-multiverse',
+    source   => 'git://github.com/wfarr/hello-universe.git',
+    user     => 'hello-universe',
     provider => git,
   }
 
