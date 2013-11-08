@@ -1,13 +1,12 @@
 class projects::hello-universe {
 
-  package { 'git-core':
-    ensure => $ensure,
+  package { ['git-core', 'build-essential']:
+    ensure => present,
   }
 
   ->
   user { 'hello-universe':
     home  => '/app',
-    gid   => 'wheel',
     shell => '/bin/bash',
   }
 
