@@ -9,11 +9,7 @@ class projects::hello-universe {
   }
 
   ->
-  package { 'build-essential':
-  }
-
-  ->
-  package { 'curl': }
+  package { ['bison', 'curl', 'build-essential']: }
 
   ->
   user { 'hello-universe':
