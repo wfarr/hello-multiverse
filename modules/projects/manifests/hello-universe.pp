@@ -1,5 +1,9 @@
 class projects::hello-universe {
 
+  Exec {
+    path => "/usr/bin:/bin"
+  }
+
   exec { 'apt-get update':
   }
 
