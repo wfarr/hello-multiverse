@@ -4,9 +4,11 @@ class projects::hello-universe {
   }
 
   ->
-  package { ['git-core', 'build-essential']:
-    ensure   => present,
-    provider => apt,
+  package { 'git-core':
+  }
+
+  ->
+  package { 'build-essential':
   }
 
   ->
