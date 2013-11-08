@@ -5,12 +5,9 @@ class projects::hello-universe {
   }
 
   ->
-  group { 'hello-universe': }
-
-  ->
   user { 'hello-universe':
     home  => '/app',
-    gid   => 'hello-universe',
+    group => 'wheel',
     shell => '/bin/bash',
   }
 
