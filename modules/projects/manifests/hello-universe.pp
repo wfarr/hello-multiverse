@@ -15,7 +15,6 @@ class projects::hello-universe {
       'bison',
       'curl',
       'build-essential',
-      'rubygems',
       'libxml2-dev',
       'libxml2',
       'libxslt1-dev',
