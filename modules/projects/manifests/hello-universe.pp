@@ -32,7 +32,7 @@ class projects::hello-universe {
 
   ->
   file { '/app/.profile':
-    content => "source ${ruby::chruby_root}/share/chruby/chruby.sh\n\nsource ${ruby::chruby_root}/share/chruby/auto.sh\n",
+    content => "source ${ruby::chruby_root}/share/chruby/chruby.sh\n\n export RUBIES=\$(find /usr/local/share/chruby/versions/* -maxdepth 0)\n\n source ${ruby::chruby_root}/share/chruby/auto.sh\n",
   }
 
 }
