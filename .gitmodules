@@ -4,3 +4,6 @@
 [submodule "modules/git"]
 	path = modules/git
 	url = git://github.com/boxen/puppet-git.git
+[submodule "modules/ruby"]
+	path = modules/ruby
+	url = git://github.com/boxen/puppet-ruby.git
