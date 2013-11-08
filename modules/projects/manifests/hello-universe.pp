@@ -1,5 +1,7 @@
 class projects::hello-universe {
 
+  require git
+
   Exec {
     path => '/usr/bin:/bin',
   }
@@ -9,10 +11,6 @@ class projects::hello-universe {
   }
 
   exec { 'apt-get update':
-  }
-
-  ->
-  package { 'git-core':
   }
 
   ->
