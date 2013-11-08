@@ -10,7 +10,19 @@ class projects::hello-universe {
   }
 
   ->
-  package { ['bison', 'curl', 'build-essential', 'rubygems']: }
+  package {
+    [
+      'bison',
+      'curl',
+      'build-essential',
+      'rubygems',
+      'libxml2-dev',
+      'libxml2',
+      'libxslt1-dev',
+      'libxslt1',
+    ]:
+      ensure => installed,
+  }
 
   ->
   user { 'hello-universe':
@@ -27,12 +39,12 @@ class projects::hello-universe {
 
   ->
   ruby::local { '/app':
-    version => '1.9.3-p231-tcs-github',
+    version => '1.9.3-p231-tcs-github-1.0.32',
   }
 
   ->
   file { '/app/.profile':
-    content => "source ${ruby::chruby_root}/share/chruby/chruby.sh\n\n export RUBIES=\$(find /usr/local/share/chruby/versions/* -maxdepth 0)\n\n source ${ruby::chruby_root}/share/chruby/auto.sh\n",
+    content => template('projects/profile.erb'),
   }
 
 }

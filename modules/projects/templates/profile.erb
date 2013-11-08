@@ -1,0 +1,12 @@
+# ARGH FUCKING RUBBY
+
+if { read -r version <"$(pwd)/.ruby-version"; } 2>/dev/null then
+  export RUBY_VERSION=$version
+  export RUBY_ROOT=<%= scope.lookupvar("ruby::chruby_root") %>/versions/$version
+
+  export PATH="${RUBY_ROOT}/bin:${PATH}"
+
+  export GEM_PATH="$(gem env gemdir)"
+
+  export PATH="${GEM_PATH}/bin:${PATH}"
+fi
