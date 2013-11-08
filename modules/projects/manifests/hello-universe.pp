@@ -10,7 +10,7 @@ class projects::hello-universe {
   }
 
   ->
-  package { ['bison', 'curl', 'build-essential']: }
+  package { ['bison', 'curl', 'build-essential', 'rubygems']: }
 
   ->
   user { 'hello-universe':
