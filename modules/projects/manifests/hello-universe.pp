@@ -31,9 +31,6 @@ class projects::hello-universe {
   }
 
   ->
-  exec { 'chown -R hello-universe /app': }
-
-  ->
   file { '/app/.ruby-version':
     content => "1.9.3-p231-tcs-github\n",
   }
