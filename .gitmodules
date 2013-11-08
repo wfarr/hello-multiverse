@@ -1,0 +1,3 @@
+[submodule "modules/repository"]
+	path = modules/repository
+	url = git://github.com/boxen/puppet-repository.git
