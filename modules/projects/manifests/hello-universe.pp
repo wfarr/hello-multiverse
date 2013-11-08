@@ -1,5 +1,4 @@
 class projects::hello-universe {
-
   require git
 
   Exec {
@@ -31,8 +30,8 @@ class projects::hello-universe {
   }
 
   ->
-  file { '/app/.ruby-version':
-    content => "1.9.3-p231-tcs-github\n",
+  ruby::local { '/app/.ruby-version':
+    version => '1.9.3-p231-tcs-github',
   }
 
 }
