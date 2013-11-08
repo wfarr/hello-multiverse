@@ -1,6 +1,6 @@
 # ARGH FUCKING RUBBY
 
-if { read -r version <"$(pwd)/.ruby-version"; } 2>/dev/null then
+if { read -r version <"$(pwd)/.ruby-version"; } 2>/dev/null; then
   export RUBY_VERSION=$version
   export RUBY_ROOT=<%= scope.lookupvar("ruby::chruby_root") %>/versions/$version
 
