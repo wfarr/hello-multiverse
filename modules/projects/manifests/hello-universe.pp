@@ -7,7 +7,7 @@ class projects::hello-universe {
   ->
   user { 'hello-universe':
     home  => '/app',
-    group => 'wheel',
+    gid   => 'wheel',
     shell => '/bin/bash',
   }
 
