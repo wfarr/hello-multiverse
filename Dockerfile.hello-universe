@@ -1,0 +1,8 @@
+# Base environment for an application
+#
+# VERSION               0.0.1
+
+FROM       github/precise-app-1
+MAINTAINER Will Farrington <wfarr@github.com>
+
+RUN bash -c 'cd /root; rm -rf boxen; git clone --recurse git://github.com/wfarr/hello-multiverse.git boxen; cd boxen; ./build.sh hello-universe'
