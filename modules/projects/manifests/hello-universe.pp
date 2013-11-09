@@ -21,6 +21,7 @@ class projects::hello-universe {
       'libxslt1.1',
       'zlib1g',
       'zlib1g-dev',
+      'libssl-dev',
     ]:
       ensure => installed,
   }
