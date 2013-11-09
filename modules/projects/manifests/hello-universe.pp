@@ -43,4 +43,11 @@ class projects::hello-universe {
     content => template('projects/profile.erb'),
   }
 
+  ->
+  exec { 'script/bootstrap':
+    command  => 'source .profile && script/bootstrap',
+    cwd      => '/app',
+    provider => shell,
+  }
+
 }
