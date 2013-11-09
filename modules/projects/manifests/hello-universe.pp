@@ -19,6 +19,8 @@ class projects::hello-universe {
       'libxml2',
       'libxslt1-dev',
       'libxslt1.1',
+      'zlib1g',
+      'zlib1g-dev',
     ]:
       ensure => installed,
   }
