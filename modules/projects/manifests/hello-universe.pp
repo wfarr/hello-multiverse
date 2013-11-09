@@ -46,6 +46,7 @@ class projects::hello-universe {
   ->
   exec { 'script/bootstrap':
     cwd      => '/app',
+    user     => 'hello-universe',
     provider => shell,
   }
 
