@@ -12,16 +12,10 @@ class projects::hello-universe {
   ->
   package {
     [
-      'bison',
-      'curl',
-      'build-essential',
       'libxml2-dev',
       'libxml2',
       'libxslt1-dev',
       'libxslt1.1',
-      'zlib1g',
-      'zlib1g-dev',
-      'libssl-dev',
     ]:
       ensure => installed,
   }
